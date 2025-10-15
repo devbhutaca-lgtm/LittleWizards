@@ -319,117 +319,46 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white">
-        <div className="container mx-auto max-w-6xl">
+      <section id="contact" className="py-32 px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white">
+        <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-4">Get in Touch</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h2>
             <p className="text-xl text-white/90 font-semibold">Have questions? We'd love to hear from you.</p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="max-w-2xl mx-auto">
             {/* Contact Information */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <Mail className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm text-white/80 mb-1 font-semibold">Email</h4>
-                      <a href="mailto:devbhuta@gmail.com" className="text-white hover:text-yellow-200 transition-colors font-medium">
-                        devbhuta@gmail.com
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <Phone className="w-6 h-6 text-green-600" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm text-white/80 mb-1 font-semibold">Phone</h4>
-                      <a href="tel:+16472062594" className="text-white hover:text-yellow-200 transition-colors font-medium">
-                        +1 647-206-2594
-                      </a>
-                    </div>
-                  </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl">
+                  <Mail className="w-8 h-8 text-blue-600" />
                 </div>
+                <h4 className="text-sm text-white/80 mb-2 font-semibold uppercase tracking-wide">Email</h4>
+                <a href="mailto:devbhuta@gmail.com" className="text-white hover:text-yellow-200 transition-colors font-medium text-lg">
+                  devbhuta@gmail.com
+                </a>
               </div>
-            </div>
-
-            {/* Inquiry Form */}
-            <div>
-              <Card className="bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-2xl rounded-2xl">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-white mb-6">Send us a message</h3>
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    <div>
-                      <Input
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Your Name"
-                        className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 rounded-xl"
-                      />
-                    </div>
-                    <div>
-                      <Input
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="Email Address"
-                        className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 rounded-xl"
-                      />
-                    </div>
-                    <div>
-                      <Input
-                        name="phone"
-                        type="tel"
-                        required
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="Phone Number"
-                        className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 rounded-xl"
-                      />
-                    </div>
-                    <div>
-                      <Select value={formData.program} onValueChange={handleSelectChange} required>
-                        <SelectTrigger className="bg-black/50 border-gray-700 text-white rounded-xl">
-                          <SelectValue placeholder="Interested Program" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-gray-900 border-gray-700 text-white">
-                          <SelectItem value="science">Science</SelectItem>
-                          <SelectItem value="finance">Finance</SelectItem>
-                          <SelectItem value="both">Both</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div>
-                      <Textarea
-                        name="message"
-                        required
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        placeholder="Your Question/Message"
-                        rows={4}
-                        className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 rounded-xl"
-                      />
-                    </div>
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 hover:from-yellow-500 hover:to-orange-500 rounded-xl py-6 font-bold text-lg shadow-xl"
-                    >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl">
+                  <Phone className="w-8 h-8 text-green-600" />
+                </div>
+                <h4 className="text-sm text-white/80 mb-2 font-semibold uppercase tracking-wide">Phone</h4>
+                <a href="tel:+16472062594" className="text-white hover:text-yellow-200 transition-colors font-medium text-lg">
+                  +1 647-206-2594
+                </a>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl">
+                  <MapPin className="w-8 h-8 text-purple-600" />
+                </div>
+                <h4 className="text-sm text-white/80 mb-2 font-semibold uppercase tracking-wide">Address</h4>
+                <p className="text-white font-medium text-lg leading-relaxed">
+                  2412 Shadow Crt<br />
+                  Oakville, ON L6M5G6
+                </p>
+              </div>
             </div>
           </div>
         </div>
