@@ -479,7 +479,7 @@ const Home = () => {
                 <h3 className="text-xl font-bold">Kidpreneurs in Action</h3>
               </div>
               <p className="text-gray-400">
-                Building Financial Confidence and Entrepreneurial Skills, Ages 7-12
+                Building Financial Confidence and Entrepreneurial Skills, Ages 6-14
               </p>
             </div>
             <div>
