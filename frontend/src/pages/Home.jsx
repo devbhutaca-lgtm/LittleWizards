@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../components/ui/dropdown-menu';
 import { useToast } from '../hooks/use-toast';
 import { submitContactForm } from '../services/api';
-import { Mail, Phone, Sparkles, Users, Target, Rocket } from 'lucide-react';
+import { Mail, Phone, Sparkles, Users, Target, Rocket, ChevronDown } from 'lucide-react';
 
 const Home = () => {
   const { toast } = useToast();
