@@ -145,7 +145,7 @@ const Home = () => {
                 Future Finance Leaders Academy
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Building Financial Confidence and Entrepreneurial Skills, Ages 7-12
+                Building Financial Confidence and Entrepreneurial Skills, Ages 6-14
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button onClick={() => scrollToSection('programs')} size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6">
