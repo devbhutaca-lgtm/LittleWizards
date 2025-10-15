@@ -68,30 +68,43 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Fixed Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2 -ml-4">
-              <Sparkles className="w-6 h-6 text-black" />
-              <h1 className="text-2xl font-light tracking-tight text-black">LittleWizards Academy</h1>
+              <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl">
+                <Sparkles className="w-6 h-6 text-white" />
+              </div>
+              <h1 className="text-2xl font-bold text-gray-900">LittleWizards Academy</h1>
             </div>
-            <nav className="hidden md:flex items-center space-x-12">
-              <button onClick={() => scrollToSection('home')} className="text-sm text-gray-600 hover:text-black transition-colors">
+            <nav className="hidden md:flex items-center space-x-10">
+              <button onClick={() => scrollToSection('home')} className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
                 Home
               </button>
-              <button onClick={() => scrollToSection('method')} className="text-sm text-gray-600 hover:text-black transition-colors">
+              <button onClick={() => scrollToSection('method')} className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
                 Method
               </button>
-              <button onClick={() => scrollToSection('programs')} className="text-sm text-gray-600 hover:text-black transition-colors">
-                Programs
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="text-sm text-gray-600 hover:text-black transition-colors">
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors focus:outline-none">
+                  <span>Programs</span>
+                  <ChevronDown className="w-4 h-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-48">
+                  <DropdownMenuItem onClick={() => navigate('/science')} className="cursor-pointer">
+                    <span className="text-blue-600 font-medium">🔬 Science</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigate('/finance')} className="cursor-pointer">
+                    <span className="text-orange-600 font-medium">💰 Finance</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <button onClick={() => scrollToSection('contact')} className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
                 Contact
               </button>
             </nav>
             <Button 
               onClick={() => scrollToSection('contact')} 
-              className="bg-black text-white hover:bg-gray-800 rounded-full px-6 mr-4"
+              className="bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 rounded-full px-8 mr-4 font-semibold shadow-lg"
             >
               Enroll Today
             </Button>
