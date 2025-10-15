@@ -91,7 +91,7 @@ const Home = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-48">
                   <DropdownMenuItem onClick={() => navigate('/science')} className="cursor-pointer">
-                    <span className="text-blue-600 font-medium">🔬 Science</span>
+                    <span className="text-blue-600 font-medium">Science</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate('/finance')} className="cursor-pointer">
                     <span className="text-orange-600 font-medium">💰 Finance</span>
