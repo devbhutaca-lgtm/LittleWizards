@@ -319,42 +319,42 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h2>
+      <section id="contact" className="py-24 px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4">Get in Touch</h2>
             <p className="text-xl text-white/90 font-semibold">Have questions? We'd love to hear from you.</p>
           </div>
           
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             {/* Contact Information */}
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl">
-                  <Mail className="w-8 h-8 text-blue-600" />
+            <div className="grid md:grid-cols-3 gap-12">
+              <div className="text-center space-y-4">
+                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-xl">
+                  <Mail className="w-10 h-10 text-blue-600" />
                 </div>
-                <h4 className="text-sm text-white/80 mb-2 font-semibold uppercase tracking-wide">Email</h4>
-                <a href="mailto:littlewizards.skills@gmail.com" className="text-white hover:text-yellow-200 transition-colors font-medium text-lg">
+                <h4 className="text-sm text-white/80 font-semibold uppercase tracking-wider">Email</h4>
+                <a href="mailto:littlewizards.skills@gmail.com" className="block text-white hover:text-yellow-200 transition-colors font-medium text-base leading-relaxed">
                   littlewizards.skills@gmail.com
                 </a>
               </div>
               
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl">
-                  <Phone className="w-8 h-8 text-green-600" />
+              <div className="text-center space-y-4">
+                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-xl">
+                  <Phone className="w-10 h-10 text-green-600" />
                 </div>
-                <h4 className="text-sm text-white/80 mb-2 font-semibold uppercase tracking-wide">Phone</h4>
-                <a href="tel:+16472062594" className="text-white hover:text-yellow-200 transition-colors font-medium text-lg">
+                <h4 className="text-sm text-white/80 font-semibold uppercase tracking-wider">Phone</h4>
+                <a href="tel:+16472062594" className="block text-white hover:text-yellow-200 transition-colors font-medium text-base">
                   +1 647-206-2594
                 </a>
               </div>
               
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl">
-                  <MapPin className="w-8 h-8 text-purple-600" />
+              <div className="text-center space-y-4">
+                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-xl">
+                  <MapPin className="w-10 h-10 text-purple-600" />
                 </div>
-                <h4 className="text-sm text-white/80 mb-2 font-semibold uppercase tracking-wide">Address</h4>
-                <p className="text-white font-medium text-lg leading-relaxed">
+                <h4 className="text-sm text-white/80 font-semibold uppercase tracking-wider">Address</h4>
+                <p className="text-white font-medium text-base leading-relaxed">
                   2412 Shadow Crt<br />
                   Oakville, ON L6M5G6
                 </p>
