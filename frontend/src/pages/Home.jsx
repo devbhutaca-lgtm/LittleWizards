@@ -319,11 +319,11 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 bg-black text-white">
+      <section id="contact" className="py-24 px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-light mb-4 tracking-tight">Get in Touch</h2>
-            <p className="text-xl text-gray-400 font-light">Have questions? We'd love to hear from you.</p>
+            <h2 className="text-5xl md:text-6xl font-bold mb-4">Get in Touch</h2>
+            <p className="text-xl text-white/90 font-semibold">Have questions? We'd love to hear from you.</p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12">
