@@ -253,41 +253,45 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
                 <div className="absolute bottom-8 left-8">
                   <h3 className="text-4xl font-light text-black mb-2">Finance & Entrepreneurship</h3>
-                  <p className="text-lg text-gray-700">Ages 7-12 (4-Stage Structure)</p>
+                  <p className="text-lg text-gray-700">Progressive 4-Stage Program</p>
                 </div>
               </div>
               <CardContent className="p-8">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="text-lg font-medium text-black mb-3">Stage 1 (Ages 7-8)</h4>
+                    <h4 className="text-lg font-medium text-black mb-3">Money Explorers</h4>
                     <ul className="space-y-2 text-gray-600">
                       <li>• What is Money?</li>
                       <li>• Earning Money</li>
                       <li>• Needs vs. Wants</li>
+                      <li>• Saving Jars</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-lg font-medium text-black mb-3">Stage 2 (Ages 9-10)</h4>
+                    <h4 className="text-lg font-medium text-black mb-3">Budget Builders</h4>
                     <ul className="space-y-2 text-gray-600">
                       <li>• Saving & Spending</li>
                       <li>• Basic Budgeting</li>
                       <li>• Banking Introduction</li>
+                      <li>• Simple Profit/Loss</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-lg font-medium text-black mb-3">Stage 3 (Ages 11-12)</h4>
+                    <h4 className="text-lg font-medium text-black mb-3">Wealth Wizards</h4>
                     <ul className="space-y-2 text-gray-600">
                       <li>• Product Design</li>
                       <li>• Marketing Basics</li>
                       <li>• Revenue & Cost Models</li>
+                      <li>• Compound Interest</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-lg font-medium text-black mb-3">Stage 4 (Ages 12+)</h4>
+                    <h4 className="text-lg font-medium text-black mb-3">Startup Strategists</h4>
                     <ul className="space-y-2 text-gray-600">
                       <li>• Business Plan Creation</li>
                       <li>• The Elevator Pitch</li>
                       <li>• Pitch Deck Presentation</li>
+                      <li>• Net Worth & VC Funding</li>
                     </ul>
                   </div>
                 </div>
