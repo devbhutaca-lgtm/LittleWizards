@@ -210,10 +210,20 @@ const Home = () => {
                       <span className="text-2xl font-bold text-gray-900">{program.price}</span>
                     </div>
                     <CardTitle className="text-2xl text-gray-900">{program.name}</CardTitle>
-                    <CardDescription className="text-lg font-semibold text-gray-700">{program.ages}</CardDescription>
+                    <CardDescription className="text-base text-gray-600 mt-2">{program.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 leading-relaxed">{program.description}</p>
+                    <div className="mb-3">
+                      <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Projects:</h4>
+                      <ul className="space-y-1">
+                        {program.projects.slice(0, 3).map((project, idx) => (
+                          <li key={idx} className="text-sm text-gray-600 flex items-start">
+                            <span className="text-blue-500 mr-2">•</span>
+                            <span>{project}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                     {program.name === 'Startup Strategists' && (
                       <p className="text-sm text-gray-500 mt-2 italic">Includes professional business plan & pitch strategies</p>
                     )}
