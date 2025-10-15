@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { useToast } from '../hooks/use-toast';
-import { submitContactForm } from '../services/mock';
+import { submitContactForm } from '../services/api';
 import {
   Sparkles,
   Calculator,
