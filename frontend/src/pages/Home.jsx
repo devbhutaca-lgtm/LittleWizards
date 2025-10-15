@@ -35,39 +35,39 @@ const Home = () => {
   const programs = [
     {
       name: 'Money Explorers',
-      ages: 'Ages 7-8',
       description: 'Foundations: Needs vs. Wants, Earning, Saving Jars',
       icon: Sparkles,
       color: 'from-blue-400 to-cyan-400',
       price: '$149',
-      image: 'https://images.unsplash.com/photo-1607863680198-23d4b2565df0'
+      image: 'https://images.unsplash.com/photo-1607863680198-23d4b2565df0',
+      projects: ['The Lemonade Stand Plan Poster', '"Job Jar" poster design', 'Need/Want sorting activity', 'Design a bank branch and vault']
     },
     {
       name: 'Budget Builders',
-      ages: 'Ages 9-10',
       description: 'Core Skills: Budgeting, Simple Profit/Loss, Sales Tax',
       icon: Calculator,
       color: 'from-green-400 to-emerald-400',
       price: '$149',
-      image: 'https://images.unsplash.com/photo-1622219999459-ab5b14e5f45a'
+      image: 'https://images.unsplash.com/photo-1622219999459-ab5b14e5f45a',
+      projects: ['Simulated Class Field Trip Budget Manager', 'Mock budget setup for 3 weeks', 'Calculate profit of cookies sold', 'Role-playing bank transactions']
     },
     {
       name: 'Wealth Wizards',
-      ages: 'Age 11',
       description: 'Growth Concepts: Compound Interest, Basics of Investing, Business Planning',
       icon: TrendingUp,
       color: 'from-amber-400 to-yellow-400',
       price: '$149',
-      image: 'https://images.unsplash.com/photo-1544776193-352d25ca82cd'
+      image: 'https://images.unsplash.com/photo-1544776193-352d25ca82cd',
+      projects: ['The Future Fund Investment Plan', 'Compound interest calculations', 'Business Model Canvas', 'Patent research project']
     },
     {
       name: 'Startup Strategists',
-      ages: 'Age 12',
       description: 'Advanced Strategy: Net Worth, VC/Angel Funding, Unit Economics, Pitch Deck',
       icon: Rocket,
       color: 'from-purple-400 to-indigo-400',
       price: '$399',
-      image: 'https://images.unsplash.com/photo-1588072432836-e10032774350'
+      image: 'https://images.unsplash.com/photo-1588072432836-e10032774350',
+      projects: ['The Young CEO Pitch (Final Project)', 'Personal Net Worth statement', '3-year revenue projection', 'Professional pitch deck creation']
     }
   ];
 
