@@ -202,17 +202,17 @@ const Home = () => {
           
           <div className="space-y-12">
             {/* Science Foundations Program */}
-            <Card className="bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-shadow rounded-2xl overflow-hidden">
-              <div className="relative h-64">
+            <Card className="bg-white border-4 border-blue-300 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 rounded-3xl overflow-hidden">
+              <div className="relative h-64 bg-gradient-to-br from-blue-400 to-cyan-400">
                 <img
                   src="https://images.unsplash.com/photo-1656331797721-b593b8f00297?crop=entropy&cs=srgb&fm=jpg&q=85"
                   alt="Science"
-                  className="w-full h-full object-cover opacity-40"
+                  className="w-full h-full object-cover opacity-20"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-500/50"></div>
                 <div className="absolute bottom-8 left-8">
-                  <h3 className="text-4xl font-light text-black mb-2">Science Foundations</h3>
-                  <p className="text-lg text-gray-700">Grades 5-8 (Ontario Curriculum)</p>
+                  <h3 className="text-4xl font-bold text-white mb-2">\ud83d\udd2c Science Foundations</h3>
+                  <p className="text-lg text-blue-100 font-semibold">Grades 5-8 (Ontario Curriculum)</p>
                 </div>
               </div>
               <CardContent className="p-8">
