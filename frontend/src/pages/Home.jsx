@@ -268,7 +268,7 @@ const Home = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-orange-500/50"></div>
                 <div className="absolute bottom-8 left-8">
-                  <h3 className="text-4xl font-bold text-white mb-2">\ud83d\udcb0 Finance & Entrepreneurship</h3>
+                  <h3 className="text-4xl font-bold text-white mb-2">Finance & Entrepreneurship</h3>
                   <p className="text-lg text-yellow-100 font-semibold">Progressive 4-Stage Program</p>
                 </div>
               </div>
