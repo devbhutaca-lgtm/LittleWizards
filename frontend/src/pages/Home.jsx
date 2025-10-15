@@ -101,10 +101,10 @@ const Home = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-6xl md:text-7xl lg:text-8xl font-light text-black mb-8 leading-tight tracking-tight">
-              Igniting curiosity in Science and shaping financial literacy.
+              Empowering young minds through hands-on learning.
             </h2>
             <p className="text-xl md:text-2xl text-gray-600 font-light max-w-4xl mx-auto leading-relaxed">
-              Offering project-based courses designed to give young minds the practical skills and foundational knowledge they need for tomorrow.
+              Project-based courses designed to build practical skills and foundational knowledge for tomorrow's leaders.
             </p>
           </div>
           <div className="relative w-full h-96 rounded-3xl overflow-hidden shadow-2xl">
