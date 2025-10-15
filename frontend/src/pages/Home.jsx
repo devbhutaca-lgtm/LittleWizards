@@ -334,8 +334,8 @@ const Home = () => {
                   <Mail className="w-8 h-8 text-blue-600" />
                 </div>
                 <h4 className="text-sm text-white/80 mb-2 font-semibold uppercase tracking-wide">Email</h4>
-                <a href="mailto:devbhuta@gmail.com" className="text-white hover:text-yellow-200 transition-colors font-medium text-lg">
-                  devbhuta@gmail.com
+                <a href="mailto:littlewizards.skills@gmail.com" className="text-white hover:text-yellow-200 transition-colors font-medium text-lg">
+                  littlewizards.skills@gmail.com
                 </a>
               </div>
               
