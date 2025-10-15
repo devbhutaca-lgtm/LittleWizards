@@ -113,23 +113,23 @@ const Home = () => {
       </header>
 
       {/* Home Section */}
-      <section id="home" className="pt-32 pb-24 px-6">
+      <section id="home" className="pt-32 pb-24 px-6 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-6xl md:text-7xl lg:text-8xl font-light text-black mb-8 leading-tight tracking-tight">
+            <h2 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-8 leading-tight">
               Empowering young minds through hands-on learning.
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 font-light max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-700 font-medium max-w-4xl mx-auto leading-relaxed">
               Project-based courses designed to build practical skills and foundational knowledge for tomorrow's leaders.
             </p>
           </div>
-          <div className="relative w-full h-96 rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative w-full h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
             <img
               src="https://images.unsplash.com/photo-1588072432836-e10032774350?crop=entropy&cs=srgb&fm=jpg&q=85"
               alt="Children learning"
-              className="w-full h-full object-cover opacity-60"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/40"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-500/30 to-transparent"></div>
           </div>
         </div>
       </section>
