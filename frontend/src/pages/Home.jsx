@@ -109,8 +109,8 @@ const Home = () => {
           </div>
           <div className="relative w-full h-96 rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1633544861852-fca2121467c6?crop=entropy&cs=srgb&fm=jpg&q=85"
-              alt="Education"
+              src="https://images.unsplash.com/photo-1588072432836-e10032774350?crop=entropy&cs=srgb&fm=jpg&q=85"
+              alt="Children learning"
               className="w-full h-full object-cover opacity-60"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/40"></div>
