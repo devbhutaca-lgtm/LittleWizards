@@ -68,7 +68,7 @@ const Home = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 -ml-4">
               <Sparkles className="w-6 h-6 text-black" />
               <h1 className="text-2xl font-light tracking-tight text-black">LittleWizards Academy</h1>
             </div>
@@ -88,7 +88,7 @@ const Home = () => {
             </nav>
             <Button 
               onClick={() => scrollToSection('contact')} 
-              className="bg-black text-white hover:bg-gray-800 rounded-full px-6"
+              className="bg-black text-white hover:bg-gray-800 rounded-full px-6 mr-4"
             >
               Enroll Today
             </Button>
