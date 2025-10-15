@@ -330,26 +330,26 @@ const Home = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-light mb-8">Contact Information</h3>
+                <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-white" />
+                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <Mail className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="text-sm text-gray-400 mb-1">Email</h4>
-                      <a href="mailto:devbhuta@gmail.com" className="text-white hover:text-gray-300 transition-colors">
+                      <h4 className="text-sm text-white/80 mb-1 font-semibold">Email</h4>
+                      <a href="mailto:devbhuta@gmail.com" className="text-white hover:text-yellow-200 transition-colors font-medium">
                         devbhuta@gmail.com
                       </a>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-white" />
+                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <Phone className="w-6 h-6 text-green-600" />
                     </div>
                     <div>
-                      <h4 className="text-sm text-gray-400 mb-1">Phone</h4>
-                      <a href="tel:+16472062594" className="text-white hover:text-gray-300 transition-colors">
+                      <h4 className="text-sm text-white/80 mb-1 font-semibold">Phone</h4>
+                      <a href="tel:+16472062594" className="text-white hover:text-yellow-200 transition-colors font-medium">
                         +1 647-206-2594
                       </a>
                     </div>
@@ -360,9 +360,9 @@ const Home = () => {
 
             {/* Inquiry Form */}
             <div>
-              <Card className="bg-gray-900 border-gray-800 shadow-xl rounded-2xl">
+              <Card className="bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-2xl rounded-2xl">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-light text-white mb-6">Send us a message</h3>
+                  <h3 className="text-2xl font-bold text-white mb-6">Send us a message</h3>
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
                       <Input
