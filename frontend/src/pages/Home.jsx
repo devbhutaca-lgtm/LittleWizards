@@ -11,6 +11,7 @@ import { submitContactForm } from '../services/api';
 import { Mail, Phone, Sparkles, Users, Target, Rocket, ChevronDown } from 'lucide-react';
 
 const Home = () => {
+  const navigate = useNavigate();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
