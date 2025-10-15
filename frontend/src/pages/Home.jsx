@@ -211,7 +211,7 @@ const Home = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-500/50"></div>
                 <div className="absolute bottom-8 left-8">
-                  <h3 className="text-4xl font-bold text-white mb-2">\ud83d\udd2c Science Foundations</h3>
+                  <h3 className="text-4xl font-bold text-white mb-2">Science Foundations</h3>
                   <p className="text-lg text-blue-100 font-semibold">Grades 5-8 (Ontario Curriculum)</p>
                 </div>
               </div>
