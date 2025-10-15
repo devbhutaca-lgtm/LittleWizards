@@ -193,12 +193,12 @@ const Home = () => {
       </section>
 
       {/* Programs Section */}
-      <section id="programs" className="py-24 px-6">
+      <section id="programs" className="py-24 px-6 bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl md:text-6xl font-light text-black mb-3 text-center tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-3 text-center">
             Find your future.
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-12 font-light">Choose the program that sparks your curiosity</p>
+          <p className="text-xl text-gray-700 text-center mb-12 font-semibold">Choose the program that sparks your curiosity</p>
           
           <div className="space-y-12">
             {/* Science Foundations Program */}
