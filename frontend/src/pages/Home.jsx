@@ -135,55 +135,55 @@ const Home = () => {
       </section>
 
       {/* The LittleWizards Method Section */}
-      <section id="method" className="py-24 px-6 bg-gray-50">
+      <section id="method" className="py-24 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl md:text-6xl font-light text-black mb-16 text-center tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-16 text-center">
             The LittleWizards Method.
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow rounded-2xl">
+            <Card className="bg-gradient-to-br from-yellow-100 to-yellow-200 border-2 border-yellow-300 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 rounded-2xl">
               <CardContent className="p-8">
-                <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-6">
-                  <Sparkles className="w-6 h-6 text-white" />
+                <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                  <Sparkles className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-light text-black mb-4">Hands-On Learning</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Hands-On Learning</h3>
+                <p className="text-gray-700 leading-relaxed font-medium">
                   Students actively manipulate concepts through experiments, simulations, and real-world tools.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow rounded-2xl">
+            <Card className="bg-gradient-to-br from-blue-100 to-blue-200 border-2 border-blue-300 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 rounded-2xl">
               <CardContent className="p-8">
-                <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-6">
-                  <Users className="w-6 h-6 text-white" />
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                  <Users className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-light text-black mb-4">Interactive Sessions</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Interactive Sessions</h3>
+                <p className="text-gray-700 leading-relaxed font-medium">
                   Small class sizes ensure every student can ask questions, collaborate, and receive personalized feedback.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow rounded-2xl">
+            <Card className="bg-gradient-to-br from-red-100 to-red-200 border-2 border-red-300 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 rounded-2xl">
               <CardContent className="p-8">
-                <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-6">
-                  <Target className="w-6 h-6 text-white" />
+                <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                  <Target className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-light text-black mb-4">Practical Application</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Practical Application</h3>
+                <p className="text-gray-700 leading-relaxed font-medium">
                   Focus on applying theories and principles to solve everyday problems.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow rounded-2xl">
+            <Card className="bg-gradient-to-br from-purple-100 to-purple-200 border-2 border-purple-300 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 rounded-2xl">
               <CardContent className="p-8">
-                <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-6">
-                  <Rocket className="w-6 h-6 text-white" />
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                  <Rocket className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-light text-black mb-4">Project-Based Mastery</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Project-Based Mastery</h3>
+                <p className="text-gray-700 leading-relaxed font-medium">
                   Every unit culminates in a major project (e.g., designing a Glider or pitching a business).
                 </p>
               </CardContent>
