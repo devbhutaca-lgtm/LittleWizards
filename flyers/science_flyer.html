@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LittleWizards Academy - Science Foundations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: white;
+        }
+        
+        .flyer {
+            width: 8.5in;
+            height: 11in;
+            background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 50%, #A5B4FC 100%);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .sparkle {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin: 0;
+        }
+        
+        .header h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 15px 0 10px 0;
+            color: #DBEAFE;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        /* Main Content */
+        .content {
+            padding: 35px 40px;
+        }
+        
+        .tagline {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Grades Grid */
+        .grades {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .grade-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: 3px solid;
+            transition: transform 0.3s;
+        }
+        
+        .grade-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .grade-card.blue {
+            border-color: #3B82F6;
+            background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+        }
+        
+        .grade-card.purple {
+            border-color: #8B5CF6;
+            background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%);
+        }
+        
+        .grade-card.green {
+            border-color: #10B981;
+            background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+        }
+        
+        .grade-card.orange {
+            border-color: #F97316;
+            background: linear-gradient(135deg, #FED7AA 0%, #FDBA74 100%);
+        }
+        
+        .grade-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #1F2937;
+        }
+        
+        .grade-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .grade-card li {
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #374151;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+        
+        .grade-card li:before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            font-size: 12px;
+        }
+        
+        /* Info Boxes */
+        .info-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .info-box {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .info-box h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: #1F2937;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-box li {
+            font-size: 13px;
+            margin-bottom: 6px;
+            color: #374151;
+            padding-left: 18px;
+            position: relative;
+        }
+        
+        .info-box li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-weight: bold;
+        }
+        
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+            border-radius: 16px;
+            padding: 25px;
+            color: white;
+            text-align: center;
+        }
+        
+        .contact h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 24px;
+        }
+        
+        .contact-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .contact-value {
+            font-size: 13px;
+            font-weight: 700;
+        }
+        
+        .cta {
+            background: #FCD34D;
+            color: #1F2937;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 800;
+            margin-top: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(252, 211, 77, 0.4);
+        }
+        
+        @media print {
+            .flyer {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <div class="sparkle">✨</div>
+                <h1>LittleWizards Academy</h1>
+            </div>
+            <h2>🔬 Science Foundations</h2>
+            <p>Ontario Curriculum • Grades 5-8</p>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <div class="tagline">
+                Explore. Experiment. Excel. — Hands-On Science That Sparks Curiosity!
+            </div>
+            
+            <!-- Grades -->
+            <div class="grades">
+                <div class="grade-card blue">
+                    <h3>🌿 Grade 5</h3>
+                    <ul>
+                        <li>Human Organ Systems</li>
+                        <li>Matter & Materials</li>
+                        <li>Strong Structures</li>
+                        <li>Energy & Stewardship</li>
+                    </ul>
+                </div>
+                
+                <div class="grade-card purple">
+                    <h3>🚁 Grade 6</h3>
+                    <ul>
+                        <li>Biodiversity</li>
+                        <li>Flight & Aerodynamics</li>
+                        <li>Electricity</li>
+                        <li>Space Exploration</li>
+                    </ul>
+                </div>
+                
+                <div class="grade-card green">
+                    <h3>🔬 Grade 7</h3>
+                    <ul>
+                        <li>Ecosystems</li>
+                        <li>Substances & Mixtures</li>
+                        <li>Heat in Environment</li>
+                        <li>Structures & Forces</li>
+                    </ul>
+                </div>
+                
+                <div class="grade-card orange">
+                    <h3>⚗️ Grade 8</h3>
+                    <ul>
+                        <li>Cells & Systems</li>
+                        <li>Fluids (Pressure/Buoyancy)</li>
+                        <li>Water Systems</li>
+                        <li>Chemical Change</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Info Boxes -->
+            <div class="info-boxes">
+                <div class="info-box">
+                    <h3>🎯 Why Students Love It</h3>
+                    <ul>
+                        <li>Hands-on experiments</li>
+                        <li>Interactive sessions</li>
+                        <li>Real-world applications</li>
+                        <li>Major projects each grade</li>
+                        <li>Small class sizes</li>
+                    </ul>
+                </div>
+                
+                <div class="info-box">
+                    <h3>📚 What You'll Gain</h3>
+                    <ul>
+                        <li>STEM confidence</li>
+                        <li>Critical thinking skills</li>
+                        <li>Improved school performance</li>
+                        <li>High school readiness</li>
+                        <li>Love for science!</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Contact -->
+            <div class="contact">
+                <h3>🌟 Start Your Science Journey!</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">littlewizards.skills<br>@gmail.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">+1 647-206-2594</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-label">Location</div>
+                        <div class="contact-value">2412 Shadow Crt<br>Oakville, ON</div>
+                    </div>
+                </div>
+                <div class="cta">Enroll Now!</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
