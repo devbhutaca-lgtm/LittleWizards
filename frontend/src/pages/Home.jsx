@@ -259,17 +259,17 @@ const Home = () => {
             </Card>
 
             {/* Finance & Entrepreneurship Program */}
-            <Card className="bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-shadow rounded-2xl overflow-hidden">
-              <div className="relative h-64">
+            <Card className="bg-white border-4 border-orange-300 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 rounded-3xl overflow-hidden">
+              <div className="relative h-64 bg-gradient-to-br from-yellow-400 to-orange-400">
                 <img
                   src="https://images.unsplash.com/photo-1592125678718-8195d5e0a509?crop=entropy&cs=srgb&fm=jpg&q=85"
                   alt="Finance"
-                  className="w-full h-full object-cover opacity-40"
+                  className="w-full h-full object-cover opacity-20"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-orange-500/50"></div>
                 <div className="absolute bottom-8 left-8">
-                  <h3 className="text-4xl font-light text-black mb-2">Finance & Entrepreneurship</h3>
-                  <p className="text-lg text-gray-700">Progressive 4-Stage Program</p>
+                  <h3 className="text-4xl font-bold text-white mb-2">\ud83d\udcb0 Finance & Entrepreneurship</h3>
+                  <p className="text-lg text-yellow-100 font-semibold">Progressive 4-Stage Program</p>
                 </div>
               </div>
               <CardContent className="p-8">
