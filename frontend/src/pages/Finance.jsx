@@ -217,17 +217,20 @@ const Finance = () => {
             Finance & Entrepreneurship
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Progressive 4-stage program building financial literacy and entrepreneurial skills from ages 7-12+
+            Progressive 4-stage program building financial literacy and entrepreneurial skills from ages 6-14
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <div className="bg-yellow-100 px-6 py-3 rounded-full">
-              <p className="text-yellow-700 font-semibold">Ages 7-12+</p>
+              <p className="text-yellow-700 font-semibold">Ages 6-14</p>
             </div>
             <div className="bg-orange-100 px-6 py-3 rounded-full">
               <p className="text-orange-700 font-semibold">4 Progressive Stages</p>
             </div>
             <div className="bg-red-100 px-6 py-3 rounded-full">
-              <p className="text-red-700 font-semibold">Real-World Projects</p>
+              <p className="text-red-700 font-semibold">3 Months per Stage</p>
+            </div>
+            <div className="bg-green-100 px-6 py-3 rounded-full">
+              <p className="text-green-700 font-semibold">Real-World Projects</p>
             </div>
           </div>
         </div>
