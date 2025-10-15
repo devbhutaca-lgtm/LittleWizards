@@ -423,7 +423,7 @@ const Home = () => {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-white text-black hover:bg-gray-200 rounded-xl py-6 font-light text-lg"
+                      className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 hover:from-yellow-500 hover:to-orange-500 rounded-xl py-6 font-bold text-lg shadow-xl"
                     >
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
