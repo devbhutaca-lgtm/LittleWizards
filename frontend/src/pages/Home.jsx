@@ -1,23 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from '../components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { useToast } from '../hooks/use-toast';
 import { submitContactForm } from '../services/api';
-import {
-  Sparkles,
-  Calculator,
-  TrendingUp,
-  Rocket,
-  Mail,
-  Phone,
-  MapPin,
-  CheckCircle,
-  BookOpen,
-  Target,
-  Users
-} from 'lucide-react';
+import { Mail, Phone, Sparkles, Users, Target, Rocket } from 'lucide-react';
 
 const Home = () => {
   const { toast } = useToast();
@@ -25,52 +14,18 @@ const Home = () => {
     name: '',
     email: '',
     phone: '',
+    program: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const programs = [
-    {
-      name: 'Money Explorers',
-      description: 'Foundations: Needs vs. Wants, Earning, Saving Jars',
-      icon: Sparkles,
-      color: 'from-blue-400 to-cyan-400',
-      price: '$149',
-      image: 'https://images.unsplash.com/photo-1607863680198-23d4b2565df0',
-      projects: ['The Lemonade Stand Plan Poster', '"Job Jar" poster design', 'Need/Want sorting activity', 'Design a bank branch and vault']
-    },
-    {
-      name: 'Budget Builders',
-      description: 'Core Skills: Budgeting, Simple Profit/Loss, Sales Tax',
-      icon: Calculator,
-      color: 'from-green-400 to-emerald-400',
-      price: '$149',
-      image: 'https://images.unsplash.com/photo-1622219999459-ab5b14e5f45a',
-      projects: ['Simulated Class Field Trip Budget Manager', 'Mock budget setup for 3 weeks', 'Calculate profit of cookies sold', 'Role-playing bank transactions']
-    },
-    {
-      name: 'Wealth Wizards',
-      description: 'Growth Concepts: Compound Interest, Basics of Investing, Business Planning',
-      icon: TrendingUp,
-      color: 'from-amber-400 to-yellow-400',
-      price: '$149',
-      image: 'https://images.unsplash.com/photo-1544776193-352d25ca82cd',
-      projects: ['The Future Fund Investment Plan', 'Compound interest calculations', 'Business Model Canvas', 'Patent research project']
-    },
-    {
-      name: 'Startup Strategists',
-      description: 'Advanced Strategy: Net Worth, VC/Angel Funding, Unit Economics, Pitch Deck',
-      icon: Rocket,
-      color: 'from-purple-400 to-indigo-400',
-      price: '$399',
-      image: 'https://images.unsplash.com/photo-1588072432836-e10032774350',
-      projects: ['The Young CEO Pitch (Final Project)', 'Personal Net Worth statement', '3-year revenue projection', 'Professional pitch deck creation']
-    }
-  ];
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (value) => {
+    setFormData(prev => ({ ...prev, program: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -78,16 +33,21 @@ const Home = () => {
     setIsSubmitting(true);
 
     try {
-      await submitContactForm(formData);
-      toast({
-        title: 'Success!',
-        description: 'Thank you for your message. We\'ll get back to you soon!',
+      await submitContactForm({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: `Interested Program: ${formData.program}\n\n${formData.message}`
       });
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      toast({
+        title: 'Thank you!',
+        description: 'Your inquiry has been received. We\'ll get back to you soon!',
+      });
+      setFormData({ name: '', email: '', phone: '', program: '', message: '' });
     } catch (error) {
       toast({
         title: 'Error',
-        description: 'Something went wrong. Please try again.',
+        description: error.message || 'Something went wrong. Please try again.',
         variant: 'destructive'
       });
     } finally {
@@ -104,184 +64,234 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-        <div className="container mx-auto px-4 py-4">
+      {/* Fixed Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
-              <h1 className="text-2xl font-bold text-gray-900">Kidpreneurs in Action</h1>
+              <Sparkles className="w-6 h-6 text-black" />
+              <h1 className="text-2xl font-light tracking-tight text-black">LittleWizards Academy</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <button onClick={() => scrollToSection('programs')} className="text-gray-600 hover:text-gray-900 transition-colors">
+              <button onClick={() => scrollToSection('home')} className="text-sm text-gray-600 hover:text-black transition-colors">
+                Home
+              </button>
+              <button onClick={() => scrollToSection('method')} className="text-sm text-gray-600 hover:text-black transition-colors">
+                Method
+              </button>
+              <button onClick={() => scrollToSection('programs')} className="text-sm text-gray-600 hover:text-black transition-colors">
                 Programs
               </button>
-              <button onClick={() => scrollToSection('methodology')} className="text-gray-600 hover:text-gray-900 transition-colors">
-                Methodology
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-gray-900 transition-colors">
+              <button onClick={() => scrollToSection('contact')} className="text-sm text-gray-600 hover:text-black transition-colors">
                 Contact
               </button>
             </nav>
-            <Button onClick={() => scrollToSection('programs')} className="bg-blue-600 hover:bg-blue-700 text-white">
-              Get Started
+            <Button 
+              onClick={() => scrollToSection('contact')} 
+              className="bg-black text-white hover:bg-gray-800 rounded-full px-6"
+            >
+              Enroll Today
             </Button>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Future Finance Leaders Academy
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                Building Financial Confidence and Entrepreneurial Skills, Ages 6-14
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={() => scrollToSection('programs')} size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6">
-                  Explore Programs
-                </Button>
-                <Button onClick={() => scrollToSection('contact')} size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-gray-300 hover:border-blue-600 hover:text-blue-600">
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1603354350317-6f7aaa5911c5"
-                alt="Children learning financial literacy"
-                className="rounded-2xl shadow-2xl w-full h-auto"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-6 max-w-xs">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">Proven Results</p>
-                    <p className="text-sm text-gray-600">Ages 6-14</p>
-                  </div>
+      {/* Home Section */}
+      <section id="home" className="pt-32 pb-24 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-6xl md:text-7xl lg:text-8xl font-light text-black mb-8 leading-tight tracking-tight">
+              Igniting curiosity in Science and shaping financial literacy.
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-600 font-light max-w-4xl mx-auto leading-relaxed">
+              Offering project-based courses designed to give young minds the practical skills and foundational knowledge they need for tomorrow.
+            </p>
+          </div>
+          <div className="relative w-full h-96 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1633544861852-fca2121467c6?crop=entropy&cs=srgb&fm=jpg&q=85"
+              alt="Education"
+              className="w-full h-full object-cover opacity-60"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/40"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* The LittleWizards Method Section */}
+      <section id="method" className="py-24 px-6 bg-gray-50">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-5xl md:text-6xl font-light text-black mb-16 text-center tracking-tight">
+            The LittleWizards Method.
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow rounded-2xl">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-6">
+                  <Sparkles className="w-6 h-6 text-white" />
                 </div>
-              </div>
-            </div>
+                <h3 className="text-2xl font-light text-black mb-4">Hands-On Learning</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Students actively manipulate concepts through experiments, simulations, and real-world tools.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow rounded-2xl">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-6">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-light text-black mb-4">Interactive Sessions</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Small class sizes ensure every student can ask questions, collaborate, and receive personalized feedback.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow rounded-2xl">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-6">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-light text-black mb-4">Practical Application</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Focus on applying theories and principles to solve everyday problems.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow rounded-2xl">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-6">
+                  <Rocket className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-light text-black mb-4">Project-Based Mastery</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Every unit culminates in a major project (e.g., designing a Glider or pitching a business).
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Programs Section */}
-      <section id="programs" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Our Four Progressive Programs
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Age-appropriate curriculum designed to build financial confidence from the ground up
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {programs.map((program, index) => {
-              const Icon = program.icon;
-              return (
-                <Card key={index} className="bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 overflow-hidden group">
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={program.image}
-                      alt={program.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <div className={`absolute inset-0 bg-gradient-to-br ${program.color} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
+      <section id="programs" className="py-24 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-5xl md:text-6xl font-light text-black mb-4 text-center tracking-tight">
+            Find your future.
+          </h2>
+          <p className="text-xl text-gray-600 text-center mb-16 font-light">Choose the program that sparks your curiosity</p>
+          
+          <div className="space-y-12">
+            {/* Science Foundations Program */}
+            <Card className="bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-shadow rounded-2xl overflow-hidden">
+              <div className="relative h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1656331797721-b593b8f00297?crop=entropy&cs=srgb&fm=jpg&q=85"
+                  alt="Science"
+                  className="w-full h-full object-cover opacity-40"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
+                <div className="absolute bottom-8 left-8">
+                  <h3 className="text-4xl font-light text-black mb-2">Science Foundations</h3>
+                  <p className="text-lg text-gray-700">Grades 5-8 (Ontario Curriculum)</p>
+                </div>
+              </div>
+              <CardContent className="p-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-lg font-medium text-black mb-3">Grade 5</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• Human Organ Systems</li>
+                      <li>• Matter & Materials</li>
+                      <li>• Strong Structures</li>
+                      <li>• Energy & Stewardship</li>
+                    </ul>
                   </div>
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${program.color} flex items-center justify-center`}>
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <span className="text-2xl font-bold text-gray-900">{program.price}</span>
-                    </div>
-                    <CardTitle className="text-2xl text-gray-900">{program.name}</CardTitle>
-                    <CardDescription className="text-base text-gray-600 mt-2">{program.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="mb-3">
-                      <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Projects:</h4>
-                      <ul className="space-y-1">
-                        {program.projects.slice(0, 3).map((project, idx) => (
-                          <li key={idx} className="text-sm text-gray-600 flex items-start">
-                            <span className="text-blue-500 mr-2">•</span>
-                            <span>{project}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {program.name === 'Startup Strategists' && (
-                      <p className="text-sm text-gray-500 mt-2 italic">Includes professional business plan & pitch strategies</p>
-                    )}
-                    <p className="text-xs text-gray-400 mt-2">+ Tax per month</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+                  <div>
+                    <h4 className="text-lg font-medium text-black mb-3">Grade 6</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• Biodiversity</li>
+                      <li>• Flight & Aerodynamics</li>
+                      <li>• Electricity</li>
+                      <li>• Space Exploration</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-black mb-3">Grade 7</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• Ecosystems</li>
+                      <li>• Substances & Mixtures</li>
+                      <li>• Heat in the Environment</li>
+                      <li>• Structures & Forces</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-black mb-3">Grade 8</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• Cells & Systems</li>
+                      <li>• Fluids (Pressure/Buoyancy)</li>
+                      <li>• Water Systems</li>
+                      <li>• Chemical Change</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-500 mt-6 italic">Each grade includes hands-on projects and experiments</p>
+              </CardContent>
+            </Card>
 
-      {/* Methodology Section */}
-      <section id="methodology" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Our Progressive Learning Methodology
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A proven approach to building financial literacy and entrepreneurial skills
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="bg-gradient-to-br from-blue-50 to-cyan-50 border-0 hover:shadow-xl transition-shadow">
-              <CardHeader>
-                <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
-                  <BookOpen className="w-7 h-7 text-white" />
+            {/* Finance & Entrepreneurship Program */}
+            <Card className="bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-shadow rounded-2xl overflow-hidden">
+              <div className="relative h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1592125678718-8195d5e0a509?crop=entropy&cs=srgb&fm=jpg&q=85"
+                  alt="Finance"
+                  className="w-full h-full object-cover opacity-40"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
+                <div className="absolute bottom-8 left-8">
+                  <h3 className="text-4xl font-light text-black mb-2">Finance & Entrepreneurship</h3>
+                  <p className="text-lg text-gray-700">Ages 7-12 (4-Stage Structure)</p>
                 </div>
-                <CardTitle className="text-2xl text-gray-900">Practical & Fun</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 leading-relaxed">
-                  Focus on real-world scenarios and projects like Lemonade Stands and Pitch Decks. Learning through doing makes concepts stick.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-0 hover:shadow-xl transition-shadow">
-              <CardHeader>
-                <div className="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center mb-4">
-                  <Target className="w-7 h-7 text-white" />
+              </div>
+              <CardContent className="p-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-lg font-medium text-black mb-3">Stage 1 (Ages 7-8)</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• What is Money?</li>
+                      <li>• Earning Money</li>
+                      <li>• Needs vs. Wants</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-black mb-3">Stage 2 (Ages 9-10)</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• Saving & Spending</li>
+                      <li>• Basic Budgeting</li>
+                      <li>• Banking Introduction</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-black mb-3">Stage 3 (Ages 11-12)</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• Product Design</li>
+                      <li>• Marketing Basics</li>
+                      <li>• Revenue & Cost Models</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-black mb-3">Stage 4 (Ages 12+)</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• Business Plan Creation</li>
+                      <li>• The Elevator Pitch</li>
+                      <li>• Pitch Deck Presentation</li>
+                    </ul>
+                  </div>
                 </div>
-                <CardTitle className="text-2xl text-gray-900">Age-Appropriate</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 leading-relaxed">
-                  Concepts are introduced gradually, increasing complexity from simple saving to Venture Capital. Each age group builds on previous knowledge.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="bg-gradient-to-br from-purple-50 to-indigo-50 border-0 hover:shadow-xl transition-shadow">
-              <CardHeader>
-                <div className="w-14 h-14 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
-                  <Users className="w-7 h-7 text-white" />
-                </div>
-                <CardTitle className="text-2xl text-gray-900">Future-Focused</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 leading-relaxed">
-                  Covers modern topics like online banking and basic business technology. Preparing kids for the financial world of tomorrow.
-                </p>
+                <p className="text-sm text-gray-500 mt-6 italic">Hands-on projects include Lemonade Stands, Budget Managers, and CEO Pitches</p>
               </CardContent>
             </Card>
           </div>
@@ -289,202 +299,126 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Get in Touch
-              </h2>
-              <p className="text-xl text-gray-600">
-                Have questions? We'd love to hear from you!
-              </p>
-            </div>
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <Card className="bg-white border-0 shadow-xl">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-gray-900">Send us a message</CardTitle>
-                  <CardDescription>Fill out the form and we'll get back to you shortly</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-4">
+      <section id="contact" className="py-24 px-6 bg-black text-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-light mb-4 tracking-tight">Get in Touch</h2>
+            <p className="text-xl text-gray-400 font-light">Have questions? We'd love to hear from you.</p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-light mb-8">Contact Information</h3>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-5 h-5 text-white" />
+                    </div>
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                        Name *
-                      </label>
+                      <h4 className="text-sm text-gray-400 mb-1">Email</h4>
+                      <a href="mailto:devbhuta@gmail.com" className="text-white hover:text-gray-300 transition-colors">
+                        devbhuta@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm text-gray-400 mb-1">Phone</h4>
+                      <a href="tel:+16472062594" className="text-white hover:text-gray-300 transition-colors">
+                        +1 647-206-2594
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Inquiry Form */}
+            <div>
+              <Card className="bg-gray-900 border-gray-800 shadow-xl rounded-2xl">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-light text-white mb-6">Send us a message</h3>
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
                       <Input
-                        id="name"
                         name="name"
                         type="text"
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="Your name"
-                        className="w-full"
+                        placeholder="Your Name"
+                        className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 rounded-xl"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Email *
-                      </label>
                       <Input
-                        id="email"
                         name="email"
                         type="email"
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="your@email.com"
-                        className="w-full"
+                        placeholder="Email Address"
+                        className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 rounded-xl"
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                        Phone *
-                      </label>
                       <Input
-                        id="phone"
                         name="phone"
                         type="tel"
                         required
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="+1 (555) 000-0000"
-                        className="w-full"
+                        placeholder="Phone Number"
+                        className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 rounded-xl"
                       />
                     </div>
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                        Message *
-                      </label>
+                      <Select value={formData.program} onValueChange={handleSelectChange} required>
+                        <SelectTrigger className="bg-black/50 border-gray-700 text-white rounded-xl">
+                          <SelectValue placeholder="Interested Program" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-gray-900 border-gray-700 text-white">
+                          <SelectItem value="science">Science</SelectItem>
+                          <SelectItem value="finance">Finance</SelectItem>
+                          <SelectItem value="both">Both</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div>
                       <Textarea
-                        id="message"
                         name="message"
                         required
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="Tell us about your interest in our programs..."
+                        placeholder="Your Question/Message"
                         rows={4}
-                        className="w-full"
+                        className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 rounded-xl"
                       />
                     </div>
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-6"
+                      className="w-full bg-white text-black hover:bg-gray-200 rounded-xl py-6 font-light text-lg"
                     >
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
                 </CardContent>
               </Card>
-
-              {/* Contact Information */}
-              <div className="space-y-6">
-                <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow">
-                  <CardContent className="pt-6">
-                    <div className="space-y-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Mail className="w-6 h-6 text-blue-600" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                          <a href="mailto:devbhuta@gmail.com" className="text-blue-600 hover:text-blue-700 transition-colors">
-                            devbhuta@gmail.com
-                          </a>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Phone className="w-6 h-6 text-green-600" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                          <a href="tel:+16472062594" className="text-green-600 hover:text-green-700 transition-colors">
-                            +1 647-206-2594
-                          </a>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <MapPin className="w-6 h-6 text-purple-600" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
-                          <p className="text-gray-600">
-                            2412 Shadow Crt<br />
-                            Oakville, ON L6M5G6
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold">Kidpreneurs in Action</h3>
-              </div>
-              <p className="text-gray-400">
-                Building Financial Confidence and Entrepreneurial Skills, Ages 6-14
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <button onClick={() => scrollToSection('programs')} className="hover:text-white transition-colors">
-                    Programs
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => scrollToSection('methodology')} className="hover:text-white transition-colors">
-                    Methodology
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => scrollToSection('contact')} className="hover:text-white transition-colors">
-                    Contact
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a href="mailto:devbhuta@gmail.com" className="hover:text-white transition-colors">
-                    devbhuta@gmail.com
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:+16472062594" className="hover:text-white transition-colors">
-                    +1 647-206-2594
-                  </a>
-                </li>
-                <li className="text-gray-400">
-                  2412 Shadow Crt, Oakville, ON
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Kidpreneurs in Action. All rights reserved.</p>
-          </div>
+      <footer className="bg-white py-8 px-6 border-t border-gray-200">
+        <div className="container mx-auto text-center">
+          <p className="text-sm text-gray-500">© 2024 LittleWizards Academy. All rights reserved.</p>
         </div>
       </footer>
     </div>

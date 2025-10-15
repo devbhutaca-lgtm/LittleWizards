@@ -1,4 +1,4 @@
-/* Custom styles for Financial Literacy Academy */
+/* LittleWizards Academy Custom Styles */
 
 /* Smooth scroll behavior */
 html {
@@ -16,10 +16,11 @@ button:hover {
 
 /* Input focus styles */
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
     outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: #000;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Card hover effects */
@@ -29,5 +30,11 @@ textarea:focus {
 
 .card-hover:hover {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  transform: translateY(-4px);
+    transform: translateY(-4px);
+}
+
+/* Minimalist design overrides */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
