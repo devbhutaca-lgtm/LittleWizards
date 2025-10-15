@@ -72,7 +72,7 @@ const Home = () => {
               <Sparkles className="w-6 h-6 text-black" />
               <h1 className="text-2xl font-light tracking-tight text-black">LittleWizards Academy</h1>
             </div>
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex items-center space-x-12">
               <button onClick={() => scrollToSection('home')} className="text-sm text-gray-600 hover:text-black transition-colors">
                 Home
               </button>
