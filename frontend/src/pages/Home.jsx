@@ -169,7 +169,7 @@ const Home = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Proven Results</p>
-                    <p className="text-sm text-gray-600">Ages 7-12</p>
+                    <p className="text-sm text-gray-600">Ages 6-14</p>
                   </div>
                 </div>
               </div>
