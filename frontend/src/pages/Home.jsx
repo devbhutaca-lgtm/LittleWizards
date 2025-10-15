@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../components/ui/dropdown-menu';
 import { useToast } from '../hooks/use-toast';
 import { submitContactForm } from '../services/api';
-import { Mail, Phone, Sparkles, Users, Target, Rocket, ChevronDown } from 'lucide-react';
+import { Mail, Phone, MapPin, Sparkles, Users, Target, Rocket, ChevronDown } from 'lucide-react';
 
 const Home = () => {
   const navigate = useNavigate();
