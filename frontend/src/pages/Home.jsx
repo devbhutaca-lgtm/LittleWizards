@@ -179,10 +179,10 @@ const Home = () => {
       {/* Programs Section */}
       <section id="programs" className="py-24 px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl md:text-6xl font-light text-black mb-4 text-center tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-light text-black mb-3 text-center tracking-tight">
             Find your future.
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-16 font-light">Choose the program that sparks your curiosity</p>
+          <p className="text-xl text-gray-600 text-center mb-12 font-light">Choose the program that sparks your curiosity</p>
           
           <div className="space-y-12">
             {/* Science Foundations Program */}
