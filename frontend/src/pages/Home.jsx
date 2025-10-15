@@ -425,42 +425,6 @@ const Home = () => {
                     </div>
                   </CardContent>
                 </Card>
-
-                {/* Social Media */}
-                <Card className="bg-gradient-to-br from-blue-600 to-cyan-600 border-0 shadow-lg">
-                  <CardContent className="pt-6">
-                    <h3 className="font-semibold text-white text-lg mb-4">Follow Us</h3>
-                    <div className="flex space-x-4">
-                      <a
-                        href="https://www.instagram.com/kidpreneursinaction"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-all transform hover:scale-110"
-                      >
-                        <Instagram className="w-6 h-6 text-white" />
-                      </a>
-                      <a
-                        href="https://www.facebook.com/kidpreneursinaction"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-all transform hover:scale-110"
-                      >
-                        <Facebook className="w-6 h-6 text-white" />
-                      </a>
-                      <a
-                        href="https://www.tiktok.com/@kidpreneursinaction"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-all transform hover:scale-110"
-                      >
-                        <Music className="w-6 h-6 text-white" />
-                      </a>
-                    </div>
-                    <p className="text-white/90 text-sm mt-4">
-                      See our events, success stories, and behind-the-scenes content!
-                    </p>
-                  </CardContent>
-                </Card>
               </div>
             </div>
           </div>
